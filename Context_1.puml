@@ -1,0 +1,18 @@
+@startuml
+title WarmHouse Context Diagram
+
+top to bottom direction
+
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Component.puml
+
+Person(user, "User", "A user of the warmHouse system")
+Person(admin, "Administrator", "An administrator managing the system")
+System(WarmHouseSystem, "WarmHouse System", "System managing, database, controller management")
+System_Ext(webiu, "Web Interface", "Web Interface for User's")
+System(controller, "WarmHouse Controller", "Switch the heaters")
+Rel(user, webiu, "Get actual temp, Set personal temp")
+Rel(admin,WarmHouseSystem,"Manages the system")
+Rel(WarmHouseSystem,webiu,"Send's actual temp")
+Rel(WarmHouseSystem,controller, "Switch on/Off heaters")
+Rel(controller,WarmHouseSystem, "Send actual temp")
+@enduml
