@@ -40,7 +40,9 @@
 
 **Диаграмма контейнеров (Containers)**
 
-Добавьте диаграмму.
+```markdown
+[Диаграмма контейнеров](https://github.com/white4spirit/architecture-warmhouse/blob/main/Container_1.puml)
+```
 
 **Диаграмма компонентов (Components)**
 
