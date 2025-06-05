@@ -46,7 +46,10 @@
 
 **Диаграмма компонентов (Components)**
 
-Добавьте диаграмму для каждого из выделенных микросервисов.
+```markdown
+[Диаграмма компонента webUI](https://github.com/white4spirit/architecture-warmhouse/blob/main/Component_webui_1.puml)
+[Диаграмма компонента SystemEngine](https://github.com/white4spirit/architecture-warmhouse/blob/main/Component_systemEngine_1.puml)
+```
 
 **Диаграмма кода (Code)**
 
