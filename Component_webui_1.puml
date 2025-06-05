@@ -1,0 +1,28 @@
+@startuml
+title WarmHouse Web UI Component Diagram
+
+top to bottom direction
+
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Component.puml
+
+Container_Boundary(WarmHouseSystem, "WarmHouse System") {
+  Container(WebApp, "Web UI", "Handles user interactions")
+  Container(SystemEngine, "System Engine")
+}
+
+Container(WebApp, "Web UI") {
+  Component(AuthController, "AuthController", "Handles authentication and authorization")
+  Component(UserController, "UserController", "Manages user profiles")
+  Component(MonitoringService, "MonitoringService", "Monitors actual temp")
+  Component(SwitchingService, "SwitchingService", "Switch on/off heaters")
+  Component(ServiceLayer, "Service Layer", "Business logic")
+  Component(RepositoryLayer, "Repository Layer", "Data access logic")
+}
+
+Rel(AuthController,ServiceLayer,"Calls business logic")
+Rel(UserController,ServiceLayer,"Calls business logic")
+Rel(SwitchingService,ServiceLayer,"Calls business logic")
+Rel(MonitoringService,ServiceLayer,"Calls business logic")
+Rel(ServiceLayer,RepositoryLayer,"Reads/Writes data")
+Rel(RepositoryLayer,SystemEngine,"Reads/Writes user data")
+@enduml
